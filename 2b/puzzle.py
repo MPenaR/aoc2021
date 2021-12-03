@@ -1,5 +1,5 @@
 import numpy as np
-file_name = 'input.txt'
+file_name = 'test.txt'
 with open(file=file_name) as f:
     lines = f.readlines()
 
