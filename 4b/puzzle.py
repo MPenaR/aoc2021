@@ -4,7 +4,7 @@ file_name = 'input.txt'
 def read_table( f, N = 5 ):
     table = np.loadtxt( f, dtype=int, max_rows = N)
     return table
-N = 5
+
 with open( file = file_name ) as f : 
     throws = f.readline()
     tables_num = []
@@ -12,12 +12,12 @@ with open( file = file_name ) as f :
     while f.readline():
         tables_num.append( read_table(f) )
 
-Ntables = len(tables_num )
-tables_bool = np.zeros( [ Ntables, N, N ], dtype=bool)
 tables_num = np.array(tables_num, dtype = int)
+tables_bool = np.zeros_like( tables_num, dtype=bool)
+
 
 throws = np.array( throws.split(','), dtype = int )
-last_winners = np.zeros([Ntables], bool)
+last_winners = np.zeros( [ len(tables_num ) ], bool)
 for throw in throws:
     tables_bool[ tables_num == throw ] = True
     
