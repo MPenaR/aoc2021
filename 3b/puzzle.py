@@ -4,10 +4,8 @@ with open(file=file_name) as f:
     data = f.readlines()
 data = list( map(  lambda line: line.strip('\n'), data) )
 
-Nwords = len(data)
-Lwords = len(data[0])
-codes = np.zeros([Nwords,Lwords],dtype=int)
-for i in range(Nwords):
+codes = np.zeros( [len(data),len(data[0])],dtype=int)
+for i in range(len(data)):
     codes[i] = np.array( list(data[i]) )
 
 
