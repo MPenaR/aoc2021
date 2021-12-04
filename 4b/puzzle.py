@@ -26,7 +26,7 @@ for throw in throws:
     winners = np.logical_or( np.any(rows, axis=1), np.any(columns, axis=1))
     new_winners = np.logical_and( winners, np.logical_not(last_winners))
     if all(winners):
-        print('bigo...')
+        print('bingo...')
         break
     last_winners = winners
 
