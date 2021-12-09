@@ -5,7 +5,6 @@ bases = [ [ frozenset(code) for code in line[0].split(' ') ] for line in lines ]
 codes = [ [ frozenset(code) for code in line[1].strip('\n').split(' ') ] for line in lines ]
 original_codes = [ frozenset(code) for code in [ 'abcefg', 'cf', 'acdeg', 'acdfg', 'bcdf', 'abdfg', 'abdefg', 'acf', 'abcdefg', 'abcdfg' ] ]
 
-
 def get_mapping(base):
     
     n_segments = [ len( word ) for word in base ]
@@ -19,7 +18,6 @@ def get_mapping(base):
 
     a = seven.difference(one)
     mapping[a] = 'a'
-
 
     nine = [ number for number in filter(lambda n: len(n) == 6, base) if set(a | four).issubset(number)][0]
 
